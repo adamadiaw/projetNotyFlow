@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    bootstrap-servers: kafka:9092   # Adresse à l'intérieur du réseau Docker
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  application:
+    name: producer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

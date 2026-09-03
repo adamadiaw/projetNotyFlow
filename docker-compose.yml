@@ -1,0 +1,14 @@
+services:
+  producer:
+    build:
+      context: ./producer
+    container_name: producer-container
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - shared-net
+
+networks:
+  shared-net:
+    external: true
