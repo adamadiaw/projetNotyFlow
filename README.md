@@ -32,4 +32,4 @@ Quand un client passe une commande sur une plateforme e-commerce (comme SpeedWhe
 - Actuator	http://localhost:8080/actuator	Métriques Producer
 - Actuator	http://localhost:8081/actuator	Métriques Consumer-email
 
-## Adama Diaw
+`Adama Diaw`
