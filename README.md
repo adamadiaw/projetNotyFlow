@@ -1,4 +1,4 @@
-# projetNotyFlow
+# NotyFlow
 Kafka-based notification platform
 
 ## Description

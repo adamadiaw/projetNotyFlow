@@ -33,12 +33,12 @@ public class StockConsumer {
             // Sauvegarder en base
             stockRepository.save(stock);
             
-            System.out.println("📦 STOCK MIS À JOUR pour " + event.produit());
+            System.out.println("   STOCK MIS À JOUR pour " + event.produit());
             System.out.println("   Quantité commandée : " + event.quantite());
             System.out.println("   Nouveau stock : " + nouvelleQuantite);
             
         } catch (Exception e) {
-            System.err.println("❌ Erreur lors du traitement : " + e.getMessage());
+            System.err.println(" Erreur lors du traitement : " + e.getMessage());
             e.printStackTrace();
         }
     }

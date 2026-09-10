@@ -16,13 +16,13 @@ public class LogConsumer {
     public void consommerCommande(String message) {
         try {
             CommandeCreatedEvent event = objectMapper.readValue(message, CommandeCreatedEvent.class);
-            System.out.println("📝 LOG ENREGISTRÉ pour la commande " + event.commandeId());
+            System.out.println("LOG ENREGISTRÉ pour la commande " + event.commandeId());
             System.out.println("   Client : " + event.clientNom() + " (" + event.clientEmail() + ")");
             System.out.println("   Produit : " + event.produit() + " x " + event.quantite());
-            System.out.println("   Montant : " + event.montant() + " €");
+            System.out.println("   Montant : " + event.montant() + " FCFA");
             System.out.println("   Date : " + event.dateCreation());
         } catch (Exception e) {
-            System.err.println("❌ Erreur lors de la désérialisation : " + e.getMessage());
+            System.err.println("Erreur lors de la désérialisation : " + e.getMessage());
         }
     }
 }

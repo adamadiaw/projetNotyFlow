@@ -19,9 +19,9 @@ public class CommandeProducerService {
         try {
             String json = objectMapper.writeValueAsString(event);
             kafkaTemplate.send(TOPIC, event.commandeId(), json);
-            System.out.println("✅ Événement envoyé au topic " + TOPIC + " : " + json);
+            System.out.println(" Événement envoyé au topic " + TOPIC + " : " + json);
         } catch (Exception e) {
-            System.err.println("❌ Erreur lors de la sérialisation : " + e.getMessage());
+            System.err.println(" Erreur lors de la sérialisation : " + e.getMessage());
         }
     }
 }

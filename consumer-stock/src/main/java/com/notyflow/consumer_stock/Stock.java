@@ -13,7 +13,6 @@ public class Stock {
 
     private int quantiteDisponible;
 
-    // Constructeur par défaut (obligatoire pour JPA)
     public Stock() {
     }
 

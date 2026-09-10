@@ -16,10 +16,10 @@ public class EmailConsumer {
     public void consommerCommande(String message) {
         try {
             CommandeCreatedEvent event = objectMapper.readValue(message, CommandeCreatedEvent.class);
-            System.out.println("📧 EMAIL ENVOYÉ à " + event.clientEmail() + " pour la commande " + event.commandeId());
-            System.out.println("   Détails : " + event.clientNom() + " a commandé " + event.quantite() + " x " + event.produit() + " pour " + event.montant() + " €");
+            System.out.println("EMAIL ENVOYÉ à " + event.clientEmail() + " pour la commande " + event.commandeId());
+            System.out.println("   Détails : " + event.clientNom() + " a commandé " + event.quantite() + " x " + event.produit() + " pour " + event.montant() + " FCFA");
         } catch (Exception e) {
-            System.err.println("❌ Erreur lors de la désérialisation : " + e.getMessage());
+            System.err.println("Erreur lors de la désérialisation : " + e.getMessage());
         }
     }
 }
