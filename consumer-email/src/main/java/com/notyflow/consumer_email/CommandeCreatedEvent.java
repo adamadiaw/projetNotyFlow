@@ -1,4 +1,4 @@
-package com.notyflow.producer;
+package com.notyflow.consumer_email;
 
 public record CommandeCreatedEvent(
     String commandeId,

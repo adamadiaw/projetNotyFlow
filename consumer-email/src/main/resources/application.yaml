@@ -1,3 +1,19 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: consumer-email
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: notiflow.email
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

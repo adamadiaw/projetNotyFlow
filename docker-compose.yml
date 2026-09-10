@@ -9,6 +9,16 @@ services:
     networks:
       - shared-net
 
+  consumer-email:
+    build:
+      context: ./consumer-email
+    container_name: consumer-email-container
+    restart: always
+    ports:
+      - "8081:8081"
+    networks:
+      - shared-net
+
 networks:
   shared-net:
     external: true

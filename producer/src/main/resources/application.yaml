@@ -3,10 +3,10 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: kafka:9092   # Adresse à l'intérieur du réseau Docker
+    bootstrap-servers: kafka:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
   application:
     name: producer
 

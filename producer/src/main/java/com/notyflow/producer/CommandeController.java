@@ -22,15 +22,14 @@ public class CommandeController {
 
     @PostMapping
     public ResponseEntity<CommandeCreatedEvent> creerCommande(@RequestBody CommandeCreatedEvent commande) {
-        // On force la génération de l'ID et la date si elles ne sont pas fournies
         CommandeCreatedEvent event = new CommandeCreatedEvent(
-                commande.commandeId() != null ? commande.commandeId() : UUID.randomUUID(),
+                commande.commandeId() != null ? commande.commandeId() : UUID.randomUUID().toString(),
                 commande.clientEmail(),
                 commande.clientNom(),
                 commande.produit(),
                 commande.quantite(),
                 commande.montant(),
-                commande.dateCreation() != null ? commande.dateCreation() : LocalDateTime.now()
+                commande.dateCreation() != null ? commande.dateCreation() : LocalDateTime.now().toString()
         );
 
         producerService.envoyerCommande(event);
