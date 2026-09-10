@@ -19,6 +19,16 @@ services:
     networks:
       - shared-net
 
+  consumer-log:
+    build:
+      context: ./consumer-log
+    container_name: consumer-log-container
+    restart: always
+    ports:
+      - "8082:8082"
+    networks:
+      - shared-net
+
 networks:
   shared-net:
     external: true
